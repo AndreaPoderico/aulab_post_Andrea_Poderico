@@ -1,0 +1,11 @@
+/* inizio navbar */
+.logo {
+   
+    height: auto;
+    max-height: 100px; /* aumenta se la scritta è ancora troppo piccola */
+    width: auto;
+    object-fit: contain;
+   
+        
+}
+/* fine navbar */
