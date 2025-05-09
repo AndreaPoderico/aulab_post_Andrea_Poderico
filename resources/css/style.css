@@ -1,11 +1,48 @@
+/* palette colori  */
+:root {
+    --primary-color: #527255;
+    --secondary-color: #87664e;
+    --tertiary-color: #c29e7c;
+    --quaternary-color: #fdf3eb;
+    --colore-navbar: #ecc29a;
+}
+/* palette colori  */
+
+body {
+    background-color: var(--quaternary-color);
+}
+
+.tagesschrift-regular {
+    font-family: "Tagesschrift", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.7rem;
+  }  
+
 /* inizio navbar */
-.logo {
-   
-    height: auto;
-    max-height: 100px; /* aumenta se la scritta è ancora troppo piccola */
-    width: auto;
-    object-fit: contain;
-   
-        
+
+
+.navbar{
+    background-color: var(--primary-color);
+    height: 80px;
+}
+
+.navbar-brand {
+    margin-left: 85px;
+    
+}
+
+.navbar-nav{
+    margin-left: 30px;
+}
+
+.searchForm{
+    width: 400px;
+}
+
+.form-control:focus{
+    outline: none;
+    border-color: var(--primary-colory);
+    box-shadow: 4px 4px 10px #527255;
 }
 /* fine navbar */

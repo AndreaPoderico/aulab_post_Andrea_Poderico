@@ -1,7 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('homepage') }}">
-            <img src="{{ asset('img/LogoShopSphere.png') }}" alt="ShopSphere Logo" class="logo">
+        <a class="navbar-brand tagesschrift-regular" href="{{ route('homepage') }}">LaTanaDelConiglio
         </a>        
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -14,24 +13,49 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
+          @auth
+          <li class="nav-item">
+            <a href="{{route('article.create')}}" class="nav-link">Inserisci un articolo</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Ciao, {{ Auth::user()->name }}
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <a href="" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+              </li>
+              <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">
+                @csrf
+              </form>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          @endauth
+
+          @guest
+
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Benvenuto Ospite</a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{{ route('login') }}" class="dropdown-item">Accedi</a>
+              </li>
+              <li>
+                <a href="{{ route('register') }}" class="dropdown-item">Registrati</a>
+              </li>
+            </ul>
           </li>
+          @endguest
+
+          
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex me-auto searchForm mt-3" role="search">
+          <div class="position-relative w-100">
+            <input class="form-control rounded-pill bg-search me-2 ps-5" type="search" placeholder="Search for products..." aria-label="Search">
+            <i class="fas fa-search position-absolute ps-3 top-50 translate-middle-y"></i>
+          </div>
         </form>
       </div>
     </div>
