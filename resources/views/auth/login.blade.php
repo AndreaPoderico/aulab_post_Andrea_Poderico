@@ -3,7 +3,7 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-12">
                 <h1>Accedi</h1>
-                <form action="{{ route('register') }}" method="POST" class="card p-5 shadow">
+                <form action="{{ route('login') }}" method="POST" class="card p-5 shadow">
                     @csrf
                     
                     <div class="mb-3">

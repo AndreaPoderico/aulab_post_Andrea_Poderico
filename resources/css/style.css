@@ -4,12 +4,12 @@
     --secondary-color: #87664e;
     --tertiary-color: #c29e7c;
     --quaternary-color: #fdf3eb;
-    --colore-navbar: #ecc29a;
+    --colore-navbar:#FFFFFF ;
 }
 /* palette colori  */
 
 body {
-    background-color: var(--quaternary-color);
+    background-color: #f5f7f9;
 }
 
 .tagesschrift-regular {
@@ -19,17 +19,38 @@ body {
     font-size: 1.7rem;
   }  
 
+  .btn-primary{
+    background-color:#35414c;
+    border-color: #35414c;
+  }
+
 /* inizio navbar */
 
 
 .navbar{
-    background-color: var(--primary-color);
+    background-color: var(--colore-navbar);
     height: 80px;
+    border-radius: 30px;
+}
+
+.logo{
+    width: 80px;
+    margin-left: 0px;
 }
 
 .navbar-brand {
-    margin-left: 85px;
-    
+    margin-left: 80px;
+    color: #35414c;
+}
+
+.nav-link{
+    color: #35414c;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
 }
 
 .navbar-nav{
@@ -37,12 +58,12 @@ body {
 }
 
 .searchForm{
-    width: 400px;
+    width: 500px;
 }
 
 .form-control:focus{
     outline: none;
-    border-color: var(--primary-colory);
-    box-shadow: 4px 4px 10px #527255;
+    border-color: #35414c;
+    box-shadow: 2px 2px 5px #35414c;
 }
 /* fine navbar */
