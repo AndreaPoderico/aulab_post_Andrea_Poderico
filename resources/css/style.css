@@ -4,12 +4,16 @@
     --secondary-color: #87664e;
     --tertiary-color: #c29e7c;
     --quaternary-color: #fdf3eb;
-    --colore-navbar:#FFFFFF ;
+    --colore-navbar:#fefcf4 ;
 }
 /* palette colori  */
 
 body {
-    background-color: #f5f7f9;
+    background-color: #faf1e2;
+}
+
+h1{
+    color: #35414c;
 }
 
 .tagesschrift-regular {
@@ -24,13 +28,32 @@ body {
     border-color: #35414c;
   }
 
+  .btn-primary:hover{
+    background-color:#fefcf4;
+    border-color: #35414c;
+    color: #35414c;
+  }
+
+   .btn-secondary{
+    background-color:#fefcf4;
+    border-color: #35414c;
+    color: #35414c;
+    width: 80px;
+  }
+
+  .btn-secondary:hover{
+    background-color:#35414c;
+    border-color: #fefcf4;
+    color: #fefcf4;
+  }
+
 /* inizio navbar */
 
 
 .navbar{
     background-color: var(--colore-navbar);
     height: 80px;
-    border-radius: 30px;
+    
 }
 
 .logo{
@@ -57,13 +80,96 @@ body {
     margin-left: 30px;
 }
 
-.searchForm{
+.search{
     width: 500px;
+    
 }
 
-.form-control:focus{
-    outline: none;
+.bg-search{
+    background-color: #fefcf4;
     border-color: #35414c;
-    box-shadow: 2px 2px 5px #35414c;
 }
 /* fine navbar */
+
+/* inizio banner */
+.bg-banner{
+    background-color: #fefcf4;
+    
+}
+/* fine banner */
+
+/* inizio header  */
+.imgHeader{
+    height: 620px;
+    width: 65%;
+    border-radius: 0px 1000px 1000px 0px;
+    display: block;
+}
+
+.header-custom {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+
+.header-text {
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    transform: translateY(-50%);
+    color: #35414c;
+    text-align: right;
+    max-width: 40%;
+}
+
+.header-text2 {
+    position: absolute;
+    top: 80%;
+    right: 3%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    padding: 30px;
+    width: 380px;
+    
+}
+
+
+
+
+/* fine header */
+
+/* inizio card */
+
+.titoloCard{
+    color: #35414c;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.transition-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .transition-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .transition-btn {
+        transition: background-color 0.3s ease;
+    }
+    .transition-btn:hover {
+        background-color: #fefcf4;
+        color: #35414c;
+    }
+
+    .card-body {
+        flex-grow: 1;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+    }
+    

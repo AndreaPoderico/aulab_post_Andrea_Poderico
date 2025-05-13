@@ -23,7 +23,8 @@ return new class extends Migration
             'Gatti',
             'Uccelli',
             'Rettili',
-            'Pesci'
+            'Pesci',
+            'Conigli',
         ];
 
         foreach ($categories as $category) {

@@ -16,6 +16,20 @@
 <body>
     
     <x-navbar/>
+
+<div class="bg-banner py-3">
+    <div class="container">
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+            @foreach($categories as $category)
+                <a href="{{ route('article.byCategory', $category) }}" class="btn btn-secondary mx-4">
+                    {{ $category->name }}
+                </a>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+
     
     <div class="min-vh-100">
         {{ $slot }}

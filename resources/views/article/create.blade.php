@@ -1,13 +1,13 @@
 <x-layout>
-    <div class="container-fluid p-5 text-center">
+    <div class="container-fluid p-3 mt-3 text-center">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h1 class="display-1">Inserisci un articolo</h1>
+                <h1 class="titolo">Inserisci un articolo</h1>
             </div>
         </div>
     </div>
 
-    <div class="container my-5">
+    <div class="container my-4">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
                 <form action="{{ route('article.store') }}" method="POST" class="card p-5 shadow" enctype="multipart/form-data">
@@ -21,7 +21,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" name="price" class="form-control" id="price">
+                        <input type="number" name="price" step="0.01" class="form-control" id="price">
                       </div>
                       @error('price')
                           <span class="text-danger">{{ $message }}</span>
@@ -46,8 +46,8 @@
                       @enderror
                     </div>
 
-                     <div class="mt-3 d-flex justify-content-center flex-column align-items-center"><button class="btn" type="submit">Inserisci articolo</button>
-                    <a href="{{ route('homepage') }}" class="btn mt-2">Torna alla home</a>
+                     <div class="mt-3 d-flex justify-content-center flex-column align-items-center"><button class="btn btn-primary" type="submit">Inserisci articolo</button>
+                    <a href="{{ route('homepage') }}" class="btn btn-primary mt-2">Torna alla home</a>
                     </div>
                   </form>
             </div>

@@ -1,73 +1,78 @@
 <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-      <a class="navbar-brand tagesschrift-regular" href="{{ route('homepage') }}">
-          
-          <img src="{{ asset('img/logoConiglio.png') }}" alt="Logo LaTanaDelConiglio" class="logo">
-          
-          LaTanaDelConiglio
+  <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      </a>        
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center tagesschrift-regular" href="{{ route('homepage') }}">
+      <img src="{{ asset('img/logoConiglio.png') }}" alt="Logo LaTanaDelConiglio" class="logo me-2">
+      LaTanaDelConiglio
+    </a>
+
+    <!-- Bottone per mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse m-0" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <form class="d-flex  searchForm mt-3" role="search">
-          <div class="position-relative w-100">
-            <input class="form-control rounded-pill bg-search  ps-5" type="search" placeholder="Cerca prodotti..." aria-label="Search">
-            <i class="fas fa-search position-absolute ps-3  top-50 translate-middle-y"></i>
-          </div>
-        </form>
+
+    <!-- Navbar contenuto -->
+    <div class="container-fluid collapse navbar-collapse justify-content-between align-items-center" id="navbarSupportedContent">
+
+      <!-- Form di ricerca -->
+      <form class="d-flex navbar-nav mb-2 mb-lg-0 search " role="search">
+        <input class="form-control me-2 rounded-pill bg-search" type="search" placeholder="Cerca prodotti..." aria-label="Search"/>
+        <button class="btn btn-primary rounded-pill" type="submit">Search</button>
+      </form>
+      <!-- Nav menu -->
+      <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+
         @auth
-        <li class="nav-item ms-1">
-          <a href="{{route('article.create')}}" class="nav-link">
+        <li class="nav-item ms-2">
+          <a href="{{ route('article.create') }}" class="nav-link p-0">
             <button class="btn btn-primary">
-              <i class="fas fa-plus"></i>
-              Inserisci articolo
+              <i class="fas fa-plus"></i> Inserisci articolo
             </button>
           </a>
         </li>
-        <li class="nav-item dropdown">
+
+        <li class="nav-item dropdown ms-2">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ciao, {{ Auth::user()->name }}
-            
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+              <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
+                Logout
+              </a>
             </li>
-            <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">
-              @csrf
-            </form>
           </ul>
+          <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">
+            @csrf
+          </form>
         </li>
         @endauth
 
         @guest
-
-        <li class="nav-item dropdown">
-
-          <a class="nav-link dropdown-toggle ms-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Benvenuto Ospite</a>
-
+        <li class="nav-item dropdown ms-2">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Benvenuto Ospite
+          </a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="{{ route('login') }}" class="dropdown-item">Accedi</a>
-            </li>
-            <li>
-              <a href="{{ route('register') }}" class="dropdown-item">Registrati</a>
-            </li>
+            <li><a href="{{ route('login') }}" class="dropdown-item">Accedi</a></li>
+            <li><a href="{{ route('register') }}" class="dropdown-item">Registrati</a></li>
           </ul>
         </li>
         @endguest
 
-        <li class="nav-item ms-1">
-          <a href="{{route('article.index')}}" class="nav-link" aria-current="page">Tutti gli articoli</a>
-        </li>
-        <li class="nav-item">
-          <i class="fa-solid fa-cart-shopping fs-4 "></i>
+        <li class="nav-item ms-2">
+          <a href="{{ route('article.index') }}" class="nav-link">Tutti gli articoli</a>
         </li>
 
-        
+        <li class="nav-item ms-2">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-cart-shopping fs-4"></i>
+          </a>
+        </li>
+
       </ul>
     </div>
   </div>

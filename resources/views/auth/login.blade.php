@@ -1,8 +1,9 @@
+
 <x-layout>
     <div class="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-12">
-                <h1>Accedi</h1>
+            <div class="col-8">
+                <h1 class="text-center m-3">Accedi</h1>
                 <form action="{{ route('login') }}" method="POST" class="card p-5 shadow">
                     @csrf
                     
